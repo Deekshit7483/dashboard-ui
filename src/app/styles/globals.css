@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Defining colors and fonts for light mode */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+/* Customize Tailwind theme using CSS custom properties */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans); /* Using font-sans variable here */
+}
+
+/* Tailwind’s default font family classes should be used as the base, 
+   but you can set global values for it if needed */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+/* You can define theme-specific variables in the Tailwind config file */
