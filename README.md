@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## 📊 React Dashboard UI
 
-First, run the development server:
+A responsive and modern dashboard built using **Next.js**, **Tailwind CSS**, and **[shadcn/ui](https://ui.shadcn.dev/)**. This project displays article data in a clean layout with tabs, filtering, searching, and table display features.
+
+
+---
+
+### ✨ Features
+
+* 📁 Sidebar layout with modern design
+* 🔍 Real-time search through articles
+* 📑 Filter by:
+
+  * All Articles
+  * Generated Articles
+  * Published Articles
+  * Scheduled Articles
+  * Archived Articles
+* 🧱 Fully responsive layout (desktop + mobile)
+* 🎨 Built with [shadcn/ui](https://ui.shadcn.dev/)
+* 💡 Clean, developer-friendly code using TypeScript
+
+---
+
+### 🛠 Tech Stack
+
+* **Framework**: [Next.js 13+](https://nextjs.org/)
+* **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+* **UI Components**: [shadcn/ui](https://ui.shadcn.dev/)
+* **Icons**: [react-icons](https://react-icons.github.io/react-icons/)
+
+---
+
+### 🚀 Getting Started
+
+#### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/react-dashboard-ui.git
+cd react-dashboard-ui
+```
+
+#### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+#### 3. Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📁 Project Structure
 
-## Learn More
+```
+components/
+  ui/         # Custom shadcn/ui components like table, card, input, tabs
+  dashboard.tsx
+  sidebar.tsx
 
-To learn more about Next.js, take a look at the following resources:
+app/
+  layout.tsx
+  page.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+styles/
+  globals.css
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is open-source and available under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### 💬 Contact
+
+Made with ❤️ by [Deekshith H R](https://github.com/Deekshit7483)
+
