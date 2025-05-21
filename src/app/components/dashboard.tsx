@@ -10,34 +10,39 @@ import {
   TableRow,
 } from "@/app/components/table";
 
-const data = [
-  ["How to Improve Your Skills in League of Legends", "league of legends [2240000]", 4575, "20 hours ago"],
-  ["How to Master Last Hitting in League of Legends", "league of legends [2240000]", 3480, "21 hours ago"],
-  ["7 Tips for Better Teamplay in League of Legends", "league of legends [2240000]", 2676, "a day ago"],
-  ["Top Virtual Executive Assistant Services (2024)", "virtual executive assistant [2900]", 2408, "1 Oct, 24"],
-  ["Unlimited Graphics Design Solutions", "unlimited graphic design services [390]", 1793, "---"],
-  ["Top Amazon Payment Methods for Quick Access to Funds", "amazon payment methods [3600]", 2647, "---"],
-  ["Backlinks 101: What are backlinks and why they're important [Free template]", "backlinks [8100]", 2261, "---"],
-  ["7 Leading AI SEO Tools in 2024 (Ranked & Compared)", "ai seo software [880]", 1543, "---"],
-  ["Unlimited Graphic Design Services You Can Rely On", "unlimited graphic design services [390]", 1974, "---"],
+const allData = [
+  ["How to Improve Your Skills in League of Legends", "league of legends [2240000]", 4575, "20 hours ago", "Generated Articles"],
+  ["How to Master Last Hitting in League of Legends", "league of legends [2240000]", 3480, "21 hours ago", "Generated Articles"],
+  ["7 Tips for Better Teamplay in League of Legends", "league of legends [2240000]", 2676, "a day ago", "Generated Articles"],
+  ["Top Virtual Executive Assistant Services (2024)", "virtual executive assistant [2900]", 2408, "1 Oct, 24", "Scheduled Articles"],
+  ["Unlimited Graphics Design Solutions", "unlimited graphic design services [390]", 1793, "---", "Published Articles"],
+  ["Top Amazon Payment Methods for Quick Access to Funds", "amazon payment methods [3600]", 2647, "---", "Archived Articles"],
+  ["Backlinks 101: What are backlinks and why they're important [Free template]", "backlinks [8100]", 2261, "---", "Archived Articles"],
+  ["7 Leading AI SEO Tools in 2024 (Ranked & Compared)", "ai seo software [880]", 1543, "---", "Published Articles"],
+  ["Unlimited Graphic Design Services You Can Rely On", "unlimited graphic design services [390]", 1974, "---", "Scheduled Articles"],
 ];
+
+const tabs = ["All Articles", "Generated Articles", "Published Articles", "Scheduled Articles", "Archived Articles"];
 
 export default function Dashboard() {
   const [search, setSearch] = useState("");
-  const filtered = data.filter(([title]) =>
-    typeof title === "string" && title.toLowerCase().includes(search.toLowerCase())
-  );
+  const [activeTab, setActiveTab] = useState("Generated Articles");
+
+  const filtered = allData
+    .filter((row) => activeTab === "All Articles" || row[4] === activeTab)
+    .filter(([title, keyword]) => `${title} ${keyword}`.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="space-y-6 bg-white text-black min-h-screen p-4 md:p-6">
       <h1 className="text-2xl md:text-3xl font-semibold text-center">Articles</h1>
 
       <div className="flex justify-center flex-wrap gap-3">
-        {["Generated Articles", "Published Articles", "Scheduled Articles", "Archived Articles"].map((tab, i) => (
+        {tabs.map((tab) => (
           <button
-            key={i}
+            key={tab}
+            onClick={() => setActiveTab(tab)}
             className={`px-4 py-1.5 rounded border text-sm ${
-              tab === "Generated Articles"
+              tab === activeTab
                 ? "bg-blue-600 text-white"
                 : "bg-white border-gray-300 text-gray-600"
             }`}
